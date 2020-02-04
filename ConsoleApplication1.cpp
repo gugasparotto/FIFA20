@@ -24,84 +24,179 @@
 #define WINVER 0x0500
 #include <windows.h>
 
+void resetBin()
+{
+	INPUT ip;
+	// Set up a generic keyboard event.
+	ip.type = INPUT_KEYBOARD;
+	ip.ki.wScan = 0; // hardware scan code for key
+	ip.ki.time = 0;
+	ip.ki.dwExtraInfo = 0;
+
+	// Press the "b" key
+	ip.ki.wVk = 0x42; // virtual-key code for the "p" key
+	ip.ki.dwFlags = 0; // 0 for key press
+	SendInput(1, &ip, sizeof(INPUT));
+
+	// Release the "b" key
+	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+	SendInput(1, &ip, sizeof(INPUT));
+
+}
+void aumentarBid()
+{
+	INPUT ip;
+	// Set up a generic keyboard event.
+	ip.type = INPUT_KEYBOARD;
+	ip.ki.wScan = 0; // hardware scan code for key
+	ip.ki.time = 0;
+	ip.ki.dwExtraInfo = 0;
+
+	// Press the "a" key
+	ip.ki.wVk = 0x41; // virtual-key code for the "p" key
+	ip.ki.dwFlags = 0; // 0 for key press
+	SendInput(1, &ip, sizeof(INPUT));
+
+	// Release the "a" key
+	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+	SendInput(1, &ip, sizeof(INPUT));
+}
+void comprar()
+{
+	INPUT ip;
+	for (int x = 0; x < 10; x++) {
+		Sleep(3);
+		// Set up a generic keyboard event.
+		ip.type = INPUT_KEYBOARD;
+		ip.ki.wScan = 0; // hardware scan code for key
+		ip.ki.time = 0;
+		ip.ki.dwExtraInfo = 0;
+
+		// Press the "M" key
+		ip.ki.wVk = 0x4D; // virtual-key code for the "a" key
+		ip.ki.dwFlags = 0; // 0 for key press
+		SendInput(1, &ip, sizeof(INPUT));
+
+		// Release the "M" key
+		ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+		SendInput(1, &ip, sizeof(INPUT));
+	}
+
+}
+void voltar() {
+	INPUT ip;
+	// Set up a generic keyboard event.
+	ip.type = INPUT_KEYBOARD;
+	ip.ki.wScan = 0; // hardware scan code for key
+	ip.ki.time = 0;
+	ip.ki.dwExtraInfo = 0;
+
+	// Press the "C" key
+	ip.ki.wVk = 0x43; // virtual-key code for the "a" key
+	ip.ki.dwFlags = 0; // 0 for key press
+	SendInput(1, &ip, sizeof(INPUT));
+
+	// Release the "C" key
+	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+	SendInput(1, &ip, sizeof(INPUT));
+}
+
+void aumentarBin() {
+	INPUT ip;
+	// Set up a generic keyboard event.
+	ip.type = INPUT_KEYBOARD;
+	ip.ki.wScan = 0; // hardware scan code for key
+	ip.ki.time = 0;
+	ip.ki.dwExtraInfo = 0;
+
+	// Press the "Z" key
+	ip.ki.wVk = 0x5A; // virtual-key code for the "z" key
+	ip.ki.dwFlags = 0; // 0 for key press
+	SendInput(1, &ip, sizeof(INPUT));
+
+	// Release the "Z" key
+	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+	SendInput(1, &ip, sizeof(INPUT));
+
+}
+
+void pesquisar() {
+	INPUT ip;
+	// Set up a generic keyboard event.
+	ip.type = INPUT_KEYBOARD;
+	ip.ki.wScan = 0; // hardware scan code for key
+	ip.ki.time = 0;
+	ip.ki.dwExtraInfo = 0;
+
+	// Press the "X" key
+	ip.ki.wVk = 0x58; // virtual-key code for the "x" key
+	ip.ki.dwFlags = 0; // 0 for key press
+	SendInput(1, &ip, sizeof(INPUT));
+
+	// Release the "X" key
+	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+	SendInput(1, &ip, sizeof(INPUT));
+
+}
+void resetBid() {
+	INPUT ip;
+	// Set up a generic keyboard event.
+	ip.type = INPUT_KEYBOARD;
+	ip.ki.wScan = 0; // hardware scan code for key
+	ip.ki.time = 0;
+	ip.ki.dwExtraInfo = 0;
+
+	// Press the "o" key
+	ip.ki.wVk = 0x4F; // virtual-key code for the "o" key
+	ip.ki.dwFlags = 0; // 0 for key press
+	SendInput(1, &ip, sizeof(INPUT));
+
+	// Release the "o" key
+	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
+	SendInput(1, &ip, sizeof(INPUT));
+}
 int main()
 {
 	// This structure will be used to create the keyboard
 	// input event.
 	INPUT ip;
-
+	int buyNow = 100;
+	int quantidadeCiclo = 5;
 	// Pause for 5 seconds.
 	Sleep(7000);
 
-	for (int i = 0; i < 45; i++)
+
+	for (int e = 0; e < quantidadeCiclo; e++)
 	{
-		// Set up a generic keyboard event.
-		ip.type = INPUT_KEYBOARD;
-		ip.ki.wScan = 0; // hardware scan code for key
-		ip.ki.time = 0;
-		ip.ki.dwExtraInfo = 0;
+	
+		for (int i = 0; i < buyNow; i++)
+		{
+			
+			aumentarBin();
+			
+			Sleep(100);
 
-		// Press the "Z" key
-		ip.ki.wVk = 0x5A; // virtual-key code for the "a" key
-		ip.ki.dwFlags = 0; // 0 for key press
-		SendInput(1, &ip, sizeof(INPUT));
+			pesquisar();
 
-		// Release the "Z" key
-		ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-		SendInput(1, &ip, sizeof(INPUT));
+			Sleep(530);
 
-		Sleep(100);
+			
 
-		// Set up a generic keyboard event.
-		ip.type = INPUT_KEYBOARD;
-		ip.ki.wScan = 0; // hardware scan code for key
-		ip.ki.time = 0;
-		ip.ki.dwExtraInfo = 0;
+			comprar();
 
-		// Press the "X" key
-		ip.ki.wVk = 0x58; // virtual-key code for the "a" key
-		ip.ki.dwFlags = 0; // 0 for key press
-		SendInput(1, &ip, sizeof(INPUT));
 
-		// Release the "X" key
-		ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-		SendInput(1, &ip, sizeof(INPUT));
 
-		Sleep(518);
+			Sleep(1900);
+			
+			voltar();
 
-		for (int x = 0; x < 1; x++) {
-			// Set up a generic keyboard event.
-			ip.type = INPUT_KEYBOARD;
-			ip.ki.wScan = 0; // hardware scan code for key
-			ip.ki.time = 0;
-			ip.ki.dwExtraInfo = 0;
+			Sleep(1000);
 
-			// Press the "M" key
-			ip.ki.wVk = 0x4D; // virtual-key code for the "a" key
-			ip.ki.dwFlags = 0; // 0 for key press
-			SendInput(1, &ip, sizeof(INPUT));
-
-			// Release the "M" key
-			ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-			SendInput(1, &ip, sizeof(INPUT));
 		}
-		Sleep(3000);
-		// Set up a generic keyboard event.
-		ip.type = INPUT_KEYBOARD;
-		ip.ki.wScan = 0; // hardware scan code for key
-		ip.ki.time = 0;
-		ip.ki.dwExtraInfo = 0;
-
-		// Press the "C" key
-		ip.ki.wVk = 0x43; // virtual-key code for the "a" key
-		ip.ki.dwFlags = 0; // 0 for key press
-		SendInput(1, &ip, sizeof(INPUT));
-
-		// Release the "C" key
-		ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
-		SendInput(1, &ip, sizeof(INPUT));
 		
-		//Sleep(1000);
+		aumentarBid();
+		
+		
 
 	}
 
