@@ -24,6 +24,8 @@
 #define WINVER 0x0500
 #include <windows.h>
 
+//TESTE
+
 void resetBin()
 {
 	INPUT ip;
