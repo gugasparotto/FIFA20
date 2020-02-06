@@ -1,7 +1,13 @@
 #pragma once
 
+
+
 #define WINVER 0x0500
+
 #include <windows.h>
+#include <fstream>
+#include <ctime>
+#include <chrono>
 #include <iostream>
 
 void resetBin()
