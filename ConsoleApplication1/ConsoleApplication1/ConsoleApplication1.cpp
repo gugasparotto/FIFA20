@@ -185,7 +185,7 @@ int main()
 
 			std::cout << "Pesquisou\n";
 
-			Sleep(530);
+			Sleep(730);
 			
 			
 
@@ -194,12 +194,12 @@ int main()
 			std::cout << "Comprou\n";
 
 
-			Sleep(1900);
+			Sleep(2000);
 			
 			voltar();
 			std::cout << "Voltou\n";
 
-			Sleep(1000);
+			Sleep(1400);
 
 		}
 		
@@ -207,14 +207,14 @@ int main()
 		
 		resetBin();
 		std::cout << "Reseta o BIN\n";
-		Sleep(300);
+		Sleep(350);
 
 		aumentarBin();
 		std::cout << "Aumentou bid \n";
-		Sleep(300);
+		Sleep(350);
 		aumentarBid();
 		std::cout << "Aumentar o bid \n";
-		Sleep(300);
+		Sleep(350);
 		for (int n = 1; n < e;n++) {
 			aumentarBid();
 			std::cout << "Aumentar o bid \n";
