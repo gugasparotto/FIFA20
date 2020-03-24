@@ -1,1 +1,3 @@
-AutoBuyer FIFA 20 desenvolvido em c++
+# FIFA20
+
+Repository to follow our packs on FIFA 20 Ultimate Team.

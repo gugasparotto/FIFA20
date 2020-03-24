@@ -162,8 +162,8 @@ int main()
 	// This structure will be used to create the keyboard
 	// input event.
 	INPUT ip;
-	int buyNow = 120;
-	int quantidadeCiclo = 10;
+	int buyNow = 40;
+	int quantidadeCiclo = buyNow-1;
 	int e;
 	// Pause for 5 seconds.
 	Sleep(4000);

@@ -21,10 +21,10 @@
 // follows so that SendInput gets defined when windows.h
 // is included below.
 //#include "pch.h"
-#define WINVER 0x0500
-#include <windows.h>
+#include "headersFifa.h"
 
-//TESTE
+/*#define WINVER 0x0500
+#include <windows.h>
 
 void resetBin()
 {
@@ -156,48 +156,71 @@ void resetBid() {
 	// Release the "o" key
 	ip.ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP for key release
 	SendInput(1, &ip, sizeof(INPUT));
-}
+}*/
 int main()
 {
 	// This structure will be used to create the keyboard
 	// input event.
 	INPUT ip;
-	int buyNow = 100;
-	int quantidadeCiclo = 5;
+	int buyNow = 120;
+	int quantidadeCiclo = 10;
+	int e;
 	// Pause for 5 seconds.
-	Sleep(7000);
+	Sleep(4000);
 
 
-	for (int e = 0; e < quantidadeCiclo; e++)
+	for ( e = 0; e < quantidadeCiclo; e++)
 	{
-	
+		
+		std::cout << "Novo Ciclo \n \n";
 		for (int i = 0; i < buyNow; i++)
 		{
-			
+			std::cout << "\n Nova Pesquisa \n \n";
 			aumentarBin();
+			std::cout << "Aumentou bid \n";
 			
 			Sleep(100);
 
 			pesquisar();
 
-			Sleep(530);
+			std::cout << "Pesquisou\n";
 
+			Sleep(530);
+			
 			
 
 			comprar();
 
+			std::cout << "Comprou\n";
 
 
 			Sleep(1900);
 			
 			voltar();
+			std::cout << "Voltou\n";
 
 			Sleep(1000);
 
 		}
 		
-		aumentarBid();
+		std::cout << "Fim loop\n";	
 		
+		resetBin();
+		std::cout << "Reseta o BIN\n";
+		Sleep(300);
+
+		aumentarBin();
+		std::cout << "Aumentou bid \n";
+		Sleep(300);
+		aumentarBid();
+		std::cout << "Aumentar o bid \n";
+		Sleep(300);
+		for (int n = 1; n < e;n++) {
+			aumentarBid();
+			std::cout << "Aumentar o bid \n";
+		}
+		buyNow--;
+		std::cout << "Diminui quantidade de ciclo em 1 \n";
 		
 
 	}
